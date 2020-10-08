@@ -1,0 +1,10 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.col-md-3 {
+  display: inline-block;
+}
+body {
+  background-color: aquamarine;
+}

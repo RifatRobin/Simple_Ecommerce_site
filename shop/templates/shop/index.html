@@ -1,60 +1,168 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+{% extends "shop/basic.html" %}
+<!-- <link rel="icon" href="/media/shop/img/icons8_apartment.ico" /> -->
+<!-- <link rel="stylesheet" href="/shop/static/shop/index.css"> -->
+<!--  -->
+{% block title %}eCom{% endblock %}
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link rel="icon" href="" />
-    <title>Home</title>
-  </head>
-  <body>
-    <center><h1>Welcome to the Shop</h1></center>
-    <center>
-      <a href="{% static 'shop/intro.txt' %}"> Click to view intro </a>
-    </center>
-    <center>
-      <a href="http://127.0.0.1:8000/pre/"> products </a>
-    </center>
-    <center>
-      <a href="http://127.0.0.1:8000/tra/"> Delivery status </a>
-    </center>
-    <center>
-      <a href="http://127.0.0.1:8000/con/"> Contact us </a>
-    </center>
-    <center>
-      <a href="http://127.0.0.1:8000/abt/"> About Us </a>
-    </center>
-    <center>
-      <a href="http://127.0.0.1:8000/admin/"> Click to go to admin</a>
-    </center>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+
+{% block content %}
+
+<style>
+  body {
+    background: rgb(165, 211, 253);
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    margin-top: 30rem;
+    height: 100px;
+  }
+
+  #demo {
+    margin-top: 10px;
+  }
+
+  .col-sm-3 {
+    display: inline-block;
+  }
+</style>
+
+<!-- <div class="container">
+  <h1>Product</h1>
+  <hr />
+  {% for pd in products %} {{pd.id}}
+  <br /><br />product_name={{pd.productName}} <br /><br />
+  description={{pd.productDescription}} <br /><br />
+  price={{pd.price}} {{pd.currency}} <br /><br />made_date={{pd.madeDate}}
+  <br /><br />expire_date={{pd.expireDate}}<br /><br />Status={{pd.status_of_product}}<br /><br />image={{pd.Image}}<br /><br />
+  <hr />
+  {% endfor %}
+</div> -->
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!--slide show starts-->
+  <div class="container carousel-inner no-padding">
+    <!--steps in row1-->
+    <div class="carousel-item active">
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <!--items-->
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/400x150/?fashion,tshirt" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-danger">Go somewhere</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/400x150/?fashion,jeans" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-danger">Go somewhere</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/400x150/?marketing,tshirt" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-danger">Go somewhere</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--row2-->
+    <div class="carousel-item">
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <!--items-->
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/400x150/?hygen,medecine" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/400x150/?savlon,sanitizer" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/400x150/?soap,lifebouy" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--row3-->
+    <div class="carousel-item">
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <!--items-->
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/400x150/?fish,Food" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-success">Go somewhere</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/400x150/?container,chips" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-success">Go somewhere</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/400x150/?icecream,choclate" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-success">Go somewhere</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--left & right controller-->
+<a href="#demo" class="carousel-control-prev" data-slide="prev">
+  <span class="carousel-control-prev-icon"></span>
+</a>
+<a href="#demo" class="carousel-control-next" data-slide="next">
+  <span class="carousel-control-next-icon"></span>
+</a>
+{% endblock %}

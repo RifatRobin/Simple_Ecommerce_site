@@ -5,21 +5,22 @@ from .models import Product
 
 
 def index(request):
-    return render(request, 'shop/index.html')
-
-
-def preview(request):
     products = Product.objects.all()
-    return render(request, "shop/p.html", {"products": products})
+    return render(request, "shop/index.html", {"products": products})
+
+
+# def preview(request):
+    # products = Product.objects.all()
+    # return render(request, "shop/index.html", {"products": products})
 
 
 def contact(request):
-    return HttpResponse("Our Contact details is here")
+    return render(request, "shop/c.html",)
 
 
 def track(request):
-    return HttpResponse("Track your product status")
+    return render(request, "shop/d.html",)
 
 
 def about(request):
-    return HttpResponse("About our term & conditions")
+    return render(request, "shop/a.html",)
