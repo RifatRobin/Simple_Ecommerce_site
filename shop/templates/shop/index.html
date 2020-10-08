@@ -1,13 +1,14 @@
 {% extends "shop/basic.html" %}
-<!-- <link rel="icon" href="/media/shop/img/icons8_apartment.ico" /> -->
-<!-- <link rel="stylesheet" href="/shop/static/shop/index.css"> -->
+{% load static %}
+
 <!--  -->
 {% block title %}eCom{% endblock %}
 
 
 {% block content %}
-
-<style>
+<link rel="icon" href="{% static 'shop/home.png' %}" />
+<link rel="stylesheet" href="{% static '/shop/index.css' %}">
+<!-- <style>
   body {
     background: rgb(165, 211, 253);
   }
@@ -25,7 +26,7 @@
   .col-sm-3 {
     display: inline-block;
   }
-</style>
+</style> -->
 
 <!-- <div class="container">
   <h1>Product</h1>
