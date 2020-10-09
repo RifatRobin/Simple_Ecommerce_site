@@ -9,9 +9,23 @@ body {
 }
 
 #demo {
-  margin-top: 10px;
+  margin-top: 0rem;
 }
-
-.col-sm-3 {
-  display: inline-block;
+.row {
+  margin-top: 20rem;
+  margin-left: -1rem;
+}
+.carousel-indicators {
+  margin-top: 0rem;
+}
+#c {
+  margin-left: 0rem;
+}
+#r {
+  margin-top: 20rem;
+  margin-left: -1rem;
+}
+img {
+  height: 200px;
+  width: 400px;
 }
