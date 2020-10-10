@@ -11,20 +11,18 @@ body {
 #demo {
   margin-top: 0rem;
 }
-.row {
+#r0 {
   margin-top: 20rem;
+  margin-left: -1rem;
+}
+#r1 {
+  margin-top: -0rem;
   margin-left: -1rem;
 }
 .carousel-indicators {
   margin-top: 0rem;
 }
-#c {
-  margin-left: 0rem;
-}
-#r {
-  margin-top: 20rem;
-  margin-left: -1rem;
-}
+
 img {
   height: 200px;
   width: 400px;

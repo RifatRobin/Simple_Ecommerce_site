@@ -7,8 +7,25 @@ class Product(models.Model):
     id = models.AutoField
     productName = models.CharField(max_length=30)
     productDescription = models.CharField(max_length=250)
+    # category
+    Med = 'Medicine'
+    Food = 'Food'
+    Fshn = 'Fashion'
+    Category = [
+        (Med, 'Medicine'),
+        (Food, 'Food'),
+        (Fshn, 'Fashion'),
+    ]
+    category = models.CharField(
+        max_length=10,
+        choices=Category,
+        default=Med,
+    )
+
     Image = models.ImageField(upload_to='shop/img', default="")
     price = models.DecimalField(max_digits=5, decimal_places=2)
+
+    # currency
     tk = 'taka'
     rp = 'rupe'
     Currency = [
@@ -20,6 +37,8 @@ class Product(models.Model):
     madeDate = models.DateField()
     expireDate = models.DateField()
     # quantity = models.IntegerField(null=False)
+
+    # stock_status
     IS = 'In stock'
     OS = 'Out of stock'
     Status_Of_Product = [
@@ -33,5 +52,6 @@ class Product(models.Model):
     )
 
     # adding the name of product instade of deafult products object(value)
+
     def __str__(self):
         return self.productName
