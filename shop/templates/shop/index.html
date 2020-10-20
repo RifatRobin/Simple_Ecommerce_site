@@ -58,7 +58,9 @@
             <img src="/media/{{products.0.Image}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{products.0.productName}}</h5>
-              <p class="card-text">{{products.0.productDescription}}</p>
+              <p class="card-text">{{products.0.productDescription}} <br><br> {{products.0.price}}
+                {{products.0.currency}}
+              </p>
               <button id="prd_{{products.0.id}}" class="cart btn btn-danger">Add to cart</button>
               <button id="details" class="details btn btn-success">Details</button>
             </div>
@@ -71,7 +73,8 @@
             <img src="/media/{{i.Image}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{i.productName}}</h5>
-              <p class="card-text">{{i.productDescription}}</p>
+              <p class="card-text">{{i.productDescription}}<br><br> {{i.price}}
+                {{i.currency}}</p>
               <button id="prd_{{i.id}}" class="cart btn btn-danger">Add to cart</button>
               <button id="details" class="details btn btn-success">Details</button>
             </div>

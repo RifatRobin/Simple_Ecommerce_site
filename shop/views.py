@@ -8,7 +8,7 @@ from math import ceil
 def index(request):
     products = Product.objects.all()
     n = len(products)
-    no_slide = n//3+ceil((n/3)-(n//3))
+    no_slide = n//2 + ceil((n/2)-(n//2))
     parameter = {"products": products,
                  "number_of_slides": no_slide, "range": range(1, no_slide)}
     return render(request, "shop/index.html", parameter)
