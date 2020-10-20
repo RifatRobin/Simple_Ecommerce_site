@@ -52,7 +52,7 @@
     <div class="carousel-item  active">
       <!-- <div class="col-xs-3 col-sm-3 col-md-3"> -->
       <!--items-->
-      <div id="r0" class="row">
+      <!-- <div id="r0" class="row">
         <div id="c" class="col-xs-3 col-sm-3 col-md-4">
           <div class="card" style="width: 18rem;">
             <img src="/media/{{products.0.Image}}" class="card-img-top" alt="...">
@@ -65,9 +65,10 @@
               <button id="details" class="details btn btn-success">Details</button>
             </div>
           </div>
-        </div>
+        </div> -->
+      <div id="r0" class="row">
+        {% for i in products %}
 
-        {% for i in products|slice:"1:" %}
         <div id="c" class="col-xs-3 col-sm-3 col-md-4">
           <div class="card" style="width: 18rem;">
             <img src="/media/{{i.Image}}" class="card-img-top" alt="...">
@@ -80,7 +81,7 @@
             </div>
           </div>
         </div>
-        {% if forloop.counter|divisibleby:2 and forloop.counter > 0 and not forloop.last %}
+        {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
       </div>
     </div>
     <div class="carousel-item">
@@ -89,10 +90,10 @@
         {% endif %}
         {% endfor %}
       </div>
-      <!-- </div> -->
     </div>
+  </div>
 
-    <!-- <div id="c" class="col-xs-3 col-sm-3 col-md-4">
+  <!-- <div id="c" class="col-xs-3 col-sm-3 col-md-4">
           <div class="card" style="width: 18rem;">
             <img src="https://source.unsplash.com/400x200/?shirt,cloth" class="card-img-top" alt="...">
             <div class="card-body">
@@ -104,10 +105,10 @@
           </div>
         </div>
       </div> -->
-    <!-- </div> -->
+  <!-- </div> -->
 
-    <!--row2-->
-    <!-- <div class="carousel-item">
+  <!--row2-->
+  <!-- <div class="carousel-item">
 
       <div class="row">
         <div id="c" class="col-xs-3 col-sm-3 col-md-4">
@@ -157,8 +158,8 @@
 
 
 
-  </div>
 </div>
+
 <!--left & right controller-->
 <a href="#demo" class="carousel-control-prev" data-slide="prev">
   <span class="carousel-control-prev-icon"></span>
