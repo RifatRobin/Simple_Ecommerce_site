@@ -19,11 +19,16 @@ body {
   margin-top: 20rem;
   margin-left: -1rem;
 }
-.carousel-indicators {
+/* .carousel-indicators {
   margin-top: 0rem;
-}
+} */
 
 img {
   height: 200px;
   width: 400px;
+}
+
+a{
+  text-decoration: none;
+  
 }
