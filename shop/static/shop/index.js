@@ -27,3 +27,4 @@ $('.cart').click(function () {
     //now lets update the cart as it clicked
     localStorage.setItem("cart", JSON.stringify(cart));
 });
+

@@ -17,6 +17,30 @@
         body {
             background-color: rgb(194, 255, 235);
         }
+
+        #lg {
+            font-size: 35px;
+            font-weight: 600;
+            color: White;
+        }
+
+        .d {
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .btnText:hover {
+            color: #fda47b;
+        }
+
+        #lg:hover {
+            color: rgb(144, 255, 100);
+        }
     </style>
 
 </head>
@@ -24,7 +48,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-warning bg-dark">
-        <a class="navbar-brand text-light" href="http://127.0.0.1:8000">eCom</a>
+        <a id="lg" class="navbar-brand" href="http://127.0.0.1:8000">eCom</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,28 +57,32 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="http://127.0.0.1:8000">Home <span
-                            class="sr-only">(current)</span></a>
+                    <a class="nav-link btnText" href="http://127.0.0.1:8000">
+                        Home
+                        <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle btnText" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Services
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                         <!-- <a class="dropdown-item" href="http://127.0.0.1:8000/pre/">Products</a> -->
-                        <a class="dropdown-item text-light" href="http://127.0.0.1:8000/tra/">Delivery Status</a>
+                        <a class="dropdown-item btnText d" href="http://127.0.0.1:8000/tra/">Delivery Status</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-light" href="http://127.0.0.1:8000/con/">Contact Us</a>
-                        <a class="dropdown-item text-light" href="http://127.0.0.1:8000/abt/">About</a>
-                        <a class="dropdown-item text-light" href="http://127.0.0.1:8000/admin/" target="blank">Admin</a>
+                        <a class="dropdown-item btnText d" href="http://127.0.0.1:8000/con/">Contact Us</a>
+                        <a class="dropdown-item btnText d" href="http://127.0.0.1:8000/abt/">About</a>
+                        <a class="dropdown-item btnText d" href="http://127.0.0.1:8000/admin/" target="blank">Admin</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{% static 'shop/intro.txt' %}">Terms & conditions</a>
+                    <a class="nav-link btnText" href="{% static 'shop/intro.txt' %}">Terms & conditions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="">Cart(<span id="crt">null</span>) </a>
+                    <a class="nav-link btnText" href="">Cart(<span id="crt">null</span>) </a>
+                </li>
+                <li class="nav-item">
+                    <a id="cCart" class="nav-link btnText" href="">ClearCart</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -62,6 +90,7 @@
                 <button class="btn btn-outline-success my-2 my-sm-0 text-light" type="submit">
                     Search
                 </button>
+                <a class="nav-link btnText" href="">Profile</a>
             </form>
         </div>
     </nav>
@@ -79,6 +108,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script>
+        $("#cCart").click(function () {
+            localStorage.clear();
+        });
+    </script>
     {% block js %}{% endblock %}
 
 </body>
