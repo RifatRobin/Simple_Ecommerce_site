@@ -14,9 +14,9 @@ def index(request):
     return render(request, "shop/index.html", parameter)
 
 
-# def preview(request):
-    # products = Product.objects.all()
-    # return render(request, "shop/index.html", {"products": products})
+def preview(request):
+    prod = Product.objects.all()
+    return render(request, "shop/productView.html", {"products": prod})
 
 
 def contact(request):

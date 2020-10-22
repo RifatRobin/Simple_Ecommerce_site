@@ -1,6 +1,6 @@
 console.log('statrted working');
 $(".card-text").hide();
-$(".details").click(function () {
+$(".qv").click(function () {
     $(".card-text").show(2000);
 });
 
