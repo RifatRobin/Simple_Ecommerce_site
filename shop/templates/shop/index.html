@@ -76,9 +76,13 @@
               <h5 class="card-title">{{i.productName}}</h5>
               <p class="card-text">{{i.productDescription}}<br><br> {{i.price}}
                 {{i.currency}}</p>
-              <button id="prd_{{i.id}}" class="cart btn btn-danger">Add to cart</button>
-
-              <button id="qv" class="qv btn btn-success">Quick view</button>
+              <div class="text-center">
+                <button id="prd_{{i.id}}" class="cart btn btn-danger mx-auto">Add to cart</button>
+                <button id="qv" class="qv btn btn-success mx-auto">Quick view</button>
+                <a href="/pre/{{i.id}}">
+                  <button id="dtls" class="dtls btn btn-info my-1 align-items-center">Details</button>
+                </a>
+              </div>
             </div>
           </div>
         </div>

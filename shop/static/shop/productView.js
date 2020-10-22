@@ -1,10 +1,3 @@
-console.log('statrted working');
-$(".card-text").hide();
-$(".qv").click(function () {
-    $(".card-text").show(2000);
-});
-
-
 if (localStorage.getItem('cart') == null) {
     var cart = {};
 }
@@ -22,10 +15,9 @@ $('.cart').click(function () {
     else {
         cart[prd_id] = cart[prd_id] + 1;
     }//this will allow to see how many cart you clicked & it will endup with session reload
-    location.reload();
+    location.reload();//this makes the page reload when the btn is clicked
     console.log(cart);
 
     //now lets update the cart as it clicked
     localStorage.setItem("cart", JSON.stringify(cart));
 });
-

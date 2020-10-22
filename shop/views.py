@@ -14,9 +14,11 @@ def index(request):
     return render(request, "shop/index.html", parameter)
 
 
-def preview(request):
-    prod = Product.objects.all()
-    return render(request, "shop/productView.html", {"products": prod})
+def preview(request, p_id):
+    # here id is the byDefault primaryKey to fetch the data in jango, if you didnot make one as primaryKey==True.
+    prod = Product.objects.filter(id=p_id)
+    print(prod)
+    return render(request, "shop/productView.html", {"prod": prod[0]})
 
 
 def contact(request):

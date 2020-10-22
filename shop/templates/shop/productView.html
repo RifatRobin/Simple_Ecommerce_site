@@ -1,18 +1,52 @@
+{% extends "shop/basic.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% block title %} {{prod.productName}} - details {% endblock %}
+{% block content %}
+<style>
+  img {
+    width: 500px;
+    height: 500px;
+  }
+</style>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>products</title>
-</head>
 
-<body>
-  <center>
-    <H2>Product view page</H2>
-  </center>
-  <!-- <h1>Product</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <br><br><img src="/media/{{prod.Image}}">
+    </div>
+    <div class="col-md-6">
+      <br />
+      <h3>Product Name : </h3>{{prod.productName}}
+
+      <br /><br />
+      <h3>Description : </h3>{{prod.productDescription}}
+
+      <br /><br />
+      <h3>Price : </h3>{{prod.price}} {{prod.currency}}
+
+      <br /><br />
+      <h3>Made Date : </h3>{{prod.madeDate}}
+
+      <br /><br />
+      <h3>Exprire Date : </h3>{{prod.expireDate}}
+
+      <br /><br />
+      <h3>Status : </h3>{{prod.status_of_product}}
+
+      <br> <br>
+      <button id="prd_{{prod.id}}" class="cart btn btn-danger mx-auto">Add to cart</button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static '/shop/productView.js' %}"></script>
+{% endblock %}
+<!-- <h1>Product</h1>
     <hr />
     {% for pd in products %} {{pd.id}}
     <br /><br />product_name={{pd.productName}} <br /><br />
@@ -21,6 +55,3 @@
     <br /><br />expire_date={{pd.expireDate}}<br /><br />Status={{pd.status_of_product}}<br /><br />image={{pd.Image}}<br /><br />
     <hr />
     {% endfor %} -->
-</body>
-
-</html>
