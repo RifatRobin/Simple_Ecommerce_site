@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+    top: 15rem;
+}
+
+h1 {
+    color: rgb(80, 111, 194);
+    font-family: sans-serif;
+    font-weight: 1000;
+    font-size: 50px;
+    letter-spacing: 10px;
+    cursor: pointer;
+    box-sizing: content-box;
+    display: block;
+}
+
+h1:hover {
+    color: rgb(255, 137, 235);
+}
+
+center {
+    position: relative;
+    top: 10rem;
+    box-sizing: content-box;
+    display: block;
+}
