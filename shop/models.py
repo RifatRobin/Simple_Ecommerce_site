@@ -55,3 +55,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.productName
+
+
+class Contact(models.Model):
+    problem_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=20)
+    problem = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.name
