@@ -33,6 +33,10 @@ def contact(request):
     return render(request, "shop/contact.html")
 
 
+def buynow(request):
+    return render(request, "shop/buynow.html",)
+
+
 def track(request):
     return render(request, "shop/d.html",)
 
