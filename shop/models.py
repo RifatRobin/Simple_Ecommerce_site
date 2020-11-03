@@ -65,3 +65,20 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Order(models.Model):
+    order_id = models.AutoField(primary_key=True)
+    firstName = models.CharField(max_length=30)
+    lastName = models.CharField(max_length=30)
+    Bemail = models.EmailField(max_length=30)
+    phone = models.CharField(max_length=11)
+    pid = models.CharField(max_length=3)
+    quantity = models.CharField(max_length=3)
+    address = models.CharField(max_length=40)
+    city = models.CharField(max_length=30)
+    district = models.CharField(max_length=30)
+    zipcode = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.pid

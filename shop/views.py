@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
-from .models import Product, Contact
+from .models import Product, Contact, Order
 from math import ceil
 
 
@@ -34,7 +34,22 @@ def contact(request):
 
 
 def buynow(request):
-    return render(request, "shop/buynow.html",)
+    if request.method == "POST":
+        firstName = request.POST.get('firstName', "")
+        lastName = request.POST.get('lastName', "")
+        Bemail = request.POST.get('Bemail', "")
+        phone = request.POST.get('phone', "")
+        pid = request.POST.get('pid', "")
+        quantity = request.POST.get('quantity', "")
+        city = request.POST.get('city', "")
+        district = request.POST.get('district', "")
+        address = request.POST.get('address', "")
+        zipcode = request.POST.get('zipcode', "")
+        orderdata = Order(firstName=firstName, lastName=lastName, Bemail=Bemail, zipcode=zipcode,
+                          phone=phone, pid=pid, quantity=quantity, district=district, city=city)
+        orderdata.save()
+        print(orderdata)
+    return render(request, "shop/buynow.html")
 
 
 def track(request):
