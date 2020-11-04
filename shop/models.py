@@ -73,12 +73,12 @@ class Order(models.Model):
     lastName = models.CharField(max_length=30)
     Bemail = models.EmailField(max_length=30)
     phone = models.CharField(max_length=11)
-    pid = models.CharField(max_length=3)
-    quantity = models.CharField(max_length=3)
+    pid = models.IntegerField(blank=False, max_length=3)
+    quantity = models.IntegerField(blank=False, max_length=3)
     address = models.CharField(max_length=40)
     city = models.CharField(max_length=30)
     district = models.CharField(max_length=30)
     zipcode = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.pid
+        return str(self.pid)

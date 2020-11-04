@@ -46,9 +46,9 @@ def buynow(request):
         address = request.POST.get('address', "")
         zipcode = request.POST.get('zipcode', "")
         orderdata = Order(firstName=firstName, lastName=lastName, Bemail=Bemail, zipcode=zipcode,
-                          phone=phone, pid=pid, quantity=quantity, district=district, city=city)
+                          phone=phone, pid=pid, quantity=quantity, district=district, city=city, address=address)
         orderdata.save()
-        print(orderdata)
+
     return render(request, "shop/buynow.html")
 
 
