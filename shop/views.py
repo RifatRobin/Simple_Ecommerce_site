@@ -33,8 +33,9 @@ def contact(request):
     return render(request, "shop/contact.html")
 
 
-def buynow(request):
+def buynow(request, order_id):
     if request.method == "POST":
+        order_id = Order.objects.get(pk=int(order_id))
         firstName = request.POST.get('firstName', "")
         lastName = request.POST.get('lastName', "")
         Bemail = request.POST.get('Bemail', "")
@@ -45,11 +46,12 @@ def buynow(request):
         district = request.POST.get('district', "")
         address = request.POST.get('address', "")
         zipcode = request.POST.get('zipcode', "")
-        orderdata = Order(firstName=firstName, lastName=lastName, Bemail=Bemail, zipcode=zipcode,
+        print(order_id)
+        orderdata = Order(order_id=order_id, firstName=firstName, lastName=lastName, Bemail=Bemail, zipcode=zipcode,
                           phone=phone, pid=pid, quantity=quantity, district=district, city=city, address=address)
         orderdata.save()
 
-    return render(request, "shop/buynow.html")
+    return render(request, "shop/buynow.html", orderdata)
 
 
 def track(request):

@@ -64,7 +64,7 @@ class Contact(models.Model):
     problem = models.CharField(max_length=1000)
 
     def __str__(self):
-        return self.name
+        return "Objection from: "+self.name
 
 
 class Order(models.Model):
@@ -80,5 +80,5 @@ class Order(models.Model):
     district = models.CharField(max_length=30)
     zipcode = models.CharField(max_length=30)
 
-    def __str__(self):
-        return str(self.pid)
+    def __str__(self,order_id):
+        return str("Order for product : "+str(self.pid)+" with order id of : "+order_id)
