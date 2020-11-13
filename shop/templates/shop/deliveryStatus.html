@@ -1,0 +1,9 @@
+{% extends "shop/basic.html" %}
+{% block title %}Delivery status{% endblock %}
+{% block content %}
+{% for i in Order %}
+<center>
+    <h1>{{i}}</h1>
+</center>
+{% endfor %}
+{% endblock %}
