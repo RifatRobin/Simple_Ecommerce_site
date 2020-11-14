@@ -80,5 +80,5 @@ class Order(models.Model):
     district = models.CharField(max_length=30)
     zipcode = models.CharField(max_length=30)
 
-    def __str__(self):
-        return str("Order id : "+str(self.order_id))
+    # def __str__(self):
+    #     return str("Order id : "+str(self.order_id))

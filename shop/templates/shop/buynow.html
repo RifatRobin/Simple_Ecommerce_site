@@ -71,5 +71,14 @@
 {% endblock %}
 
 {% block js %}
-<script src="{% static '/shop/buynow.js' %}"></script>
+<script>
+
+    {% if passOrder %}
+
+    alert("Successfully received your order.Your order id is {{oid}}.");
+
+    {% endif %}
+</script>
+<!-- <script src="{% static '/shop/buynow.js' %}"></script> -->
+
 {% endblock %}

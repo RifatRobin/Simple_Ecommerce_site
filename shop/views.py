@@ -49,7 +49,9 @@ def buynow(request):
         orderdata = Order(firstName=firstName, lastName=lastName, Bemail=Bemail, zipcode=zipcode,
                           phone=phone, pid=pid, quantity=quantity, district=district, city=city, address=address)
         orderdata.save()
-
+        passOrder = True
+        oid = Order.order_id
+        return render(request, "shop/buynow.html", {'passOrder': passOrder, 'oid': oid})
     return render(request, "shop/buynow.html")
 
 
