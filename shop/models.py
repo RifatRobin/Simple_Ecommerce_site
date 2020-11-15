@@ -68,7 +68,9 @@ class Contact(models.Model):
 
 
 class Order(models.Model):
-    order_id = models.AutoField(primary_key=True, null=False, unique=True)
+    order_id = models.IntegerField(
+        primary_key=True, blank=False, serialize=True, unique=True)
+
     firstName = models.CharField(max_length=30)
     lastName = models.CharField(max_length=30)
     Bemail = models.EmailField(max_length=30)

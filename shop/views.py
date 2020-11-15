@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.http import Http404
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 # Create your views here.
 from .models import Product, Contact, Order
@@ -35,6 +36,7 @@ def contact(request):
 
 def buynow(request):
     if request.method == "POST":
+
         firstName = request.POST.get('firstName', "")
         lastName = request.POST.get('lastName', "")
         Bemail = request.POST.get('Bemail', "")
@@ -51,6 +53,7 @@ def buynow(request):
         orderdata.save()
         passOrder = True
         oid = Order.order_id
+        print(oid)
         return render(request, "shop/buynow.html", {'passOrder': passOrder, 'oid': oid})
     return render(request, "shop/buynow.html")
 
