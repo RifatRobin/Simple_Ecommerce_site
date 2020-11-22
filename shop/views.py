@@ -58,6 +58,15 @@ def buynow(request):
     return render(request, "shop/buynow.html")
 
 
+def search(request):
+    queryset = request.GET['queryset']
+    querysetofprice = request.GET['querysetofprice']
+    spd = Product.objects.filter(productName__icontains=queryset)
+    spp = Product.objects.filter(price__icontains=querysetofprice)
+    sResult = {'spd': spd, 'spp': spp}
+    return render(request, "shop/search.html", sResult)
+
+
 def track(request):
     return render(request, "shop/deliveryStatus.html",)
 

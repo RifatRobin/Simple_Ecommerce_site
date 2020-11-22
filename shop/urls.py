@@ -6,6 +6,7 @@ urlpatterns = [
     path("pre/<int:p_id>", views.preview, name="Preview"),
     path("con/", views.contact, name="Contact"),
     path("buynow/", views.buynow, name="Buynow"),
+    path("search/",views.search,name="search"),
     path("tra/", views.track, name="Track"),
     path("abt/", views.about, name="About"),
 ]

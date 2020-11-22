@@ -1,3 +1,65 @@
 {% extends "shop/basic.html" %}
+{% load static %}
 {% block title %}search{% endblock %}
-{% block content %}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/shop/search.css' %}">
+<h2>Search Result: </h2> <br>
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <!--slide show starts-->
+    <div class="container carousel-inner no-padding">
+        <!--steps in row1-->
+        <div class="carousel-item  active">
+
+            <div id="r0" class="row">
+                {% for i in spd %}
+                <div id="c" class="col-xs-3 col-sm-3 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/media/{{i.Image}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{i.productName}}</h5>
+                            <p class="card-text"> <b>product_id: {{i.id}} </b><br> <br>{{i.productDescription}}<br><br>
+                                {{i.price}}
+                                {{i.currency}}</p>
+                            <div class="text-center">
+                                <button id="prd_{{i.id}}" class="cart btn btn-danger mx-auto">Add to cart</button>
+                                <button id="qv" class="qv btn btn-success mx-auto">Quick view</button>
+                                <a href="/pre/{{i.id}}">
+                                    <button id="dtls" class="dtls btn btn-info my-1">Details</button>
+                                </a>
+                                <a href="/buynow/">
+                                    <button id="bnow" class="btn btn-warning my-1">BuyNow</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div id="r1" class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<!--left & right controller-->
+<a href="#demo" class="carousel-control-prev" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+</a>
+<a href="#demo" class="carousel-control-next" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+</a>
+{% endblock %}
+
+{% block js %}
+<script src="{% static '/shop/search.js' %}"></script>
+{% endblock %}

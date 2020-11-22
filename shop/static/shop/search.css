@@ -1,0 +1,41 @@
+
+ h2 {
+        position: relative;
+        top: 2rem;
+}
+
+body {
+        background: rgb(165, 211, 253);
+      }
+      
+.carousel-control-prev,
+.carousel-control-next {
+        margin-top: 30rem;
+        height: 100px;
+      }
+#demo {
+        margin-top: 0rem;
+      }
+#r0 {
+        margin-top: 20rem;
+        margin-left: -1rem;
+      }
+#r1 {
+        margin-top: 20rem;
+        margin-left: -1rem;
+      }
+      /* .carousel-indicators {
+        margin-top: 0rem;
+      } */
+      
+img {
+        height: 200px;
+        width: 400px;
+      }
+a{
+        text-decoration: none;
+        
+      }
+#dtls{
+        margin-top: 10px;
+      }

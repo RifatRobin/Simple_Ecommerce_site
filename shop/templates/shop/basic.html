@@ -96,9 +96,12 @@
                     <a id="cCart" class="nav-link btnText" href="">ClearCart</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success my-2 my-sm-0 text-light" type="submit">
+            <form method="GET" action="/search/" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search"
+                    name="queryset" id="queryset" required />
+                <input class="form-control mr-2 col-sm-3" type="search" placeholder="By Price" aria-label="Search"
+                    name="querysetofprice" id="querysetofprice" />
+                <button class="btn btn-outline-success my-2 my-sm-0 text-light" type="submit" id="searchbtn">
                     Search
                 </button>
                 <a class="nav-link btnText" href="">Profile</a>
