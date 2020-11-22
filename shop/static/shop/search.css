@@ -1,12 +1,18 @@
-
- h2 {
-        position: relative;
-        top: 2rem;
-}
-
 body {
         background: rgb(165, 211, 253);
       }
+ h2 {
+        position: relative;
+        top: 2rem;
+        left: 10rem;
+}
+p{
+  position: relative;
+        top: 2rem;
+        left: 10rem;
+}
+
+
       
 .carousel-control-prev,
 .carousel-control-next {

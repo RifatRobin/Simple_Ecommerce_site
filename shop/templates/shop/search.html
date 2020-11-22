@@ -5,6 +5,20 @@
 {% block content %}
 <link rel="stylesheet" href="{% static '/shop/search.css' %}">
 <h2>Search Result: </h2> <br>
+{% if spdp|length < 1 %}
+<p>Your search query for - <b>{{queryset}}</b> <br>- did not match any documents. <br>
+    Suggestions: <br>
+
+<ul>
+    <li></li>Make sure that all words are spelled correctly.</li>
+    <li></li>Try different keywords.</li>
+    <li></li>Try more general keywords.</li>
+</ul>
+
+</p>
+
+{% endif %}
+
 <div id="demo" class="carousel slide" data-ride="carousel">
     <!--slide show starts-->
     <div class="container carousel-inner no-padding">
@@ -12,7 +26,7 @@
         <div class="carousel-item  active">
 
             <div id="r0" class="row">
-                {% for i in spd %}
+                {% for i in spdp %}
                 <div id="c" class="col-xs-3 col-sm-3 col-md-4">
                     <div class="card" style="width: 18rem;">
                         <img src="/media/{{i.Image}}" class="card-img-top" alt="...">

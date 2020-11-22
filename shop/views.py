@@ -60,10 +60,10 @@ def buynow(request):
 
 def search(request):
     queryset = request.GET['queryset']
-    querysetofprice = request.GET['querysetofprice']
     spd = Product.objects.filter(productName__icontains=queryset)
-    spp = Product.objects.filter(price__icontains=querysetofprice)
-    sResult = {'spd': spd, 'spp': spp}
+    spp = Product.objects.filter(price__icontains=queryset)
+    spdp = spd.union(spp)
+    sResult = {'spdp': spdp, 'queryset': queryset}
     return render(request, "shop/search.html", sResult)
 
 
