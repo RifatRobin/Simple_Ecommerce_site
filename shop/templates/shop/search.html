@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{% static '/shop/search.css' %}">
 <h2>Search Result: </h2> <br>
 {% if spdp|length < 1 %}
-<p>Your search query for - <b>{{queryset}}</b> <br>- did not match any documents. <br>
+<p class="errormsg">Your search query for - <b>{{queryset}}</b> <br>- did not match any documents. <br>
     Suggestions: <br>
 
 <ul>

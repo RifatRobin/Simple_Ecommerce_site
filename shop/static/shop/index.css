@@ -12,17 +12,20 @@ body {
   margin-top: 0rem;
 }
 #r0 {
-  margin-top: 20rem;
+  margin-top: 10rem;
   margin-left: -1rem;
 }
 #r1 {
-  margin-top: 20rem;
+  margin-top: 10rem;
   margin-left: -1rem;
 }
 /* .carousel-indicators {
   margin-top: 0rem;
 } */
 
+#c{
+  margin-top: 10rem;
+}
 img {
   height: 200px;
   width: 400px;
