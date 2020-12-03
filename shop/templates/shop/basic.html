@@ -53,18 +53,18 @@
 
         .reg {
             position: relative;
-            left: 20px;
+            left: -10px;
             margin-right: 10px;
         }
 
         .lgn {
             position: relative;
-            left: 20px;
+            left: -10px;
         }
 
         #searchbtn {
             position: relative;
-            left: 10px;
+            left: 0px;
         }
     </style>
 
@@ -113,17 +113,66 @@
                 </li>
             </ul>
             <form method="GET" action="/search/" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-2 col-sm-5" type="search" placeholder="Find by Name or price"
+                <input class="form-control mr-2 col-sm-8" type="search" placeholder="Find by Name or price"
                     aria-label="Search" name="queryset" id="queryset" required />
                 <!-- <input class="form-control mr-2 col-sm-3" type="search" placeholder="By Price" aria-label="Search"
                     name="querysetofprice" id="querysetofprice" /> -->
                 <button class="btn btn-outline-success my-2 my-sm-0 col-sm-0 text-light" type="submit" id="searchbtn">
                     Search
                 </button>
-                <a class=" btn btn-info btnText reg  my-sm-0 col-sm-0" href="/register">Register</a>
-                <a class="btn btn-success btnText lgn  my-sm-0 col-sm-0" href="/login">Login</a>
+            </form>
+            <a class=" btn btn-info btnText reg  my-sm-0 col-sm-0" href="/register">Register</a>
+            <button type="button" class="btn btn-success btnText lgn  my-sm-0 col-sm-0" data-toggle="modal"
+                data-target="#lgn">Login</button>
 
-                <!-- <a class="nav-link btnText" href="">Profile</a> -->
+            <!-- <a class="nav-link btnText" href="">Profile</a> -->
+
+
+            <!-- modal -->
+            <!-- Button trigger modal -->
+            <!-- <button type="button" class="btn btn-primary" data-toggle="lgn" data-target="#exampleModalCenter">
+                    Launch demo modal
+                </button> -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="lgn" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Login To eCom</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <form method="POST" action="/login/">
+                                    {% csrf_token %}
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6">
+                                            <label for="user_name">User Name</label>
+                                            <input type="text" class="form-control" id="user_name" name="user_name">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="password1">Password</label>
+                                            <input type="password1" class="form-control" id="password1"
+                                                name="password1">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success my-2 Lsubmit">Login</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary"><a href="/register">Register</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             </form>
         </div>
     </nav>

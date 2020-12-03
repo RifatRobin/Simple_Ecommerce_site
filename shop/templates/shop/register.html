@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <title>Registration</title>
+    <style>
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Registration Form</h1>
+    </center>
+    <div class="container">
+        <form method="POST" action="/register/">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="first_name">First Name</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="user_name">User Name</label>
+                    <input type="text" class="form-control" id="user_name" name="user_name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Remail">Email</label>
+                    <input type="email" class="form-control" id="Remail" name="Remail">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="password1">Password</label>
+                    <input type="password1" class="form-control" id="password1" name="password1">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password2">ReType Password</label>
+                    <input type="password2" class="form-control" id="password2" name="password2">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-info Rsubmit">Register</button>
+            <button type="button" class="btn btn-info"><a href="/">Home</a></button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
