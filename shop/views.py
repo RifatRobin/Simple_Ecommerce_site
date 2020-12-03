@@ -1,7 +1,9 @@
 from django.http import Http404
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,redirect
 from django.http import HttpResponse
 # Create your views here.
+from django.contrib import messages
+from django.contrib.auth.models import User, auth
 from .models import Product, Contact, Order
 from math import ceil
 
@@ -65,6 +67,19 @@ def search(request):
     spdp = spd.union(spp)
     sResult = {'spdp': spdp, 'queryset': queryset}
     return render(request, "shop/search.html", sResult)
+
+
+def register(request):
+    return render(request, 'shop/register.html')
+
+
+def login(request):
+    return render(request, 'shop/login.html')
+
+
+def logout(request):
+    auth.logout(request)
+    redirect("/")
 
 
 def track(request):

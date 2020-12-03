@@ -50,6 +50,22 @@
 
             background-color: rgb(221, 255, 140);
         }
+
+        .reg {
+            position: relative;
+            left: 20px;
+            margin-right: 10px;
+        }
+
+        .lgn {
+            position: relative;
+            left: 20px;
+        }
+
+        #searchbtn {
+            position: relative;
+            left: 10px;
+        }
     </style>
 
 </head>
@@ -97,13 +113,16 @@
                 </li>
             </ul>
             <form method="GET" action="/search/" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-2 col-sm" type="search" placeholder="Find by Name or price"
+                <input class="form-control mr-2 col-sm-5" type="search" placeholder="Find by Name or price"
                     aria-label="Search" name="queryset" id="queryset" required />
                 <!-- <input class="form-control mr-2 col-sm-3" type="search" placeholder="By Price" aria-label="Search"
                     name="querysetofprice" id="querysetofprice" /> -->
                 <button class="btn btn-outline-success my-2 my-sm-0 col-sm-0 text-light" type="submit" id="searchbtn">
                     Search
                 </button>
+                <a class=" btn btn-info btnText reg  my-sm-0 col-sm-0" href="/register">Register</a>
+                <a class="btn btn-success btnText lgn  my-sm-0 col-sm-0" href="/login">Login</a>
+
                 <!-- <a class="nav-link btnText" href="">Profile</a> -->
             </form>
         </div>
