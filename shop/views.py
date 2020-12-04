@@ -77,23 +77,26 @@ def register(request):
         email = request.POST['email']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
+
         if password1 == password2:
             if User.objects.filter(username=username).exists():
-                messages.info(request, "take another username")
-                return render(request, 'shop/register.html')
+                messages.error(request, "take another username")
+                return redirect('register')
 
             elif User.objects.filter(email=email).exists():
-                messages.info(request, "email already exists")
-                return render(request, 'shop/register.html')
+                messages.error(request, "email already exists")
+                return redirect('register')
+
             else:
                 user = User.objects.create_user(first_name=first_name, last_name=last_name,
                                                 username=username, email=email, password=password1)
                 user.save()
 
         else:
-            messages.info(request, "password Not macthed")
-            return render(request, "shop/register.html")
+            messages.error(request, "password Not macthed")
+            return redirect('register')
         return redirect('/')
+
     else:
         return render(request, 'shop/register.html')
 
