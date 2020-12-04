@@ -1,5 +1,5 @@
 from django.http import Http404
-from django.shortcuts import render, get_object_or_404,redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 # Create your views here.
 from django.contrib import messages
@@ -70,7 +70,32 @@ def search(request):
 
 
 def register(request):
-    return render(request, 'shop/register.html')
+    if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        if password1 == password2:
+            if User.objects.filter(username=username).exists():
+                messages.info(request, "take another username")
+                return render(request, 'shop/register.html')
+
+            elif User.objects.filter(email=email).exists():
+                messages.info(request, "email already exists")
+                return render(request, 'shop/register.html')
+            else:
+                user = User.objects.create_user(first_name=first_name, last_name=last_name,
+                                                username=username, email=email, password=password1)
+                user.save()
+
+        else:
+            messages.info(request, "password Not macthed")
+            return render(request, "shop/register.html")
+        return redirect('/')
+    else:
+        return render(request, 'shop/register.html')
 
 
 def login(request):
