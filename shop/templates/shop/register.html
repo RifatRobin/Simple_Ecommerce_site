@@ -17,14 +17,36 @@
             text-decoration: none;
             color: white;
         }
+
+        .alrt {
+            position: relative;
+            top: -50px;
+        }
     </style>
 </head>
 
 <body>
     <center>
         <h1>Registration Form</h1>
-
     </center>
+
+    <!-- error messeges -->
+
+    <div class="container alrt">
+        {% for message in messages %}
+        <p>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        </p>
+        {% endfor %}
+    </div>
+
+    <!-- messege ends -->
+    
     <div class="container">
 
         <form method="POST" action="/register/">
@@ -68,19 +90,7 @@
         </form>
 
     </div>
-    <!-- error messeges -->
-    {% for messege in messeges %}
-    <h2>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            {{messege}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    </h2>
-    {% endfor %}
 
-    <!-- messege ends -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

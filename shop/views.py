@@ -95,6 +95,7 @@ def register(request):
         else:
             messages.error(request, "password Not macthed")
             return redirect('register')
+        messages.success(request, "Registration completed Successfully")
         return redirect('/')
 
     else:
