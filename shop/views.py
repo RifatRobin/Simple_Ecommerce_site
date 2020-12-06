@@ -103,7 +103,6 @@ def register(request):
 
 
 def login(request):
-    u = User.objects.all()
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
@@ -115,29 +114,17 @@ def login(request):
             return redirect('/')
         else:
             messages.error(request, 'invalid credential')
-            return redirect("/login")
-
-        # if User.objects.filter(username=username).exists():
-        #     if User.objects.filter(password=password).exists():
-        #         messages.success(request, "Successfully loged in")
-        #         return redirect('/')
-        #     else:
-        #         messages.error(request, "invalid Credential !!")
-        #         return redirect('login')
-        # else:
-        #     messages.error(request, "invalid Credential !!")
-        #     return redirect('login')
-
-        # return redirect(request, 'shop/index.html')
+            return redirect("/")
 
     else:
         messages.error(request, "invalid Credential !!")
-        return redirect("/login")
+        return redirect("/")
 
 
 def logout(request):
     auth.logout(request)
-    redirect("/")
+    messages.info(request, "Loged out from the site")
+    return redirect("/")
 
 
 def track(request):
